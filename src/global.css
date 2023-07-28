@@ -1,3 +1,13 @@
+@keyframes spin {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -7,6 +17,7 @@
 body {
 	background: #000;
 	font-family: sans-serif;
+	color: white;
 }
 
 h1 {
@@ -16,13 +27,43 @@ h1 {
 }
 
 .wrapper {
-	max-width: 1200px;
-	margin: 0 auto;
-	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
 }
-button{
-	font-size: 3em;
-	width: 100px;
+
+.spinner {
+	width: 80px;
+	height: 80px;
+	margin: 0 auto;
+	border-radius: 100%;
+	border: 2px solid black;
+	border-right: 2px solid white;
+	animation: spin 1.5s linear infinite;
+}
+
+.card {
+	padding: 20px;
+	width: 100%;
+	display: flex;
+	border: 2px solid white;
+	flex-direction: column;
+	margin-top: 20px;
+}
+
+.card_first_column {
+	display: flex;
+	justify-content: space-between;
+}
+
+.card_second_column {
 	margin-top: 10px;
-	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+}
+
+.card_gap {
+	display: 'flex';
+	flex-direction: "column";
+	gap: '5px';
 }

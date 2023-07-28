@@ -1,5 +1,5 @@
 import React from "react";
-import { IState, IUser } from "../redux-toolkit/store/users/type";
+import { IUser } from "../redux-toolkit/store/users/type";
 
 interface IProps {
   props: IUser;
