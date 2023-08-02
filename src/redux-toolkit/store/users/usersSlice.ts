@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { IState, IUser } from "./type";
+import { IState, IUser } from "../../../type/type";
 import { getAllUsers } from "../../../function/getAllUsers";
 import { AxiosResponse } from "axios";
 
@@ -29,7 +29,6 @@ const usersSlice = createSlice({
         state.error = true
       })
       .addCase(getUsers.fulfilled, (state, action: PayloadAction<IUser[]>) => {
-        console.log(action.payload)
         state.users = action.payload;
         state.loading = false;
       })
