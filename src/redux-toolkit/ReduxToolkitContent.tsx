@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { useCustomDispatch, useCustomSelector } from "./hooks/redux";
 import { getUsers } from "./store/users/usersSlice";
 import { CardForm } from "../UI/CardForm"
@@ -7,7 +7,7 @@ export const ReduxToolkitContent = () => {
   const dispatch = useCustomDispatch();
   const user = useCustomSelector((state) => state.usersReducer);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     dispatch(getUsers());
   }, []);
 
